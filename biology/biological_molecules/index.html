@@ -1,0 +1,680 @@
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"/><title>Biological Molecules</title><style>
+/* cspell:disable-file */
+/* webkit printing magic: print all background colors */
+html {
+	-webkit-print-color-adjust: exact;
+}
+* {
+	box-sizing: border-box;
+	-webkit-print-color-adjust: exact;
+}
+
+html,
+body {
+	margin: 0;
+	padding: 0;
+}
+@media only screen {
+	body {
+		margin: 2em auto;
+		max-width: 900px;
+		color: rgb(55, 53, 47);
+	}
+}
+
+body {
+	line-height: 1.5;
+	white-space: pre-wrap;
+}
+
+a,
+a.visited {
+	color: inherit;
+	text-decoration: underline;
+}
+
+.pdf-relative-link-path {
+	font-size: 80%;
+	color: #444;
+}
+
+h1,
+h2,
+h3 {
+	letter-spacing: -0.01em;
+	line-height: 1.2;
+	font-weight: 600;
+	margin-bottom: 0;
+}
+
+.page-title {
+	font-size: 2.5rem;
+	font-weight: 700;
+	margin-top: 0;
+	margin-bottom: 0.75em;
+}
+
+h1 {
+	font-size: 1.875rem;
+	margin-top: 1.875rem;
+}
+
+h2 {
+	font-size: 1.5rem;
+	margin-top: 1.5rem;
+}
+
+h3 {
+	font-size: 1.25rem;
+	margin-top: 1.25rem;
+}
+
+.source {
+	border: 1px solid #ddd;
+	border-radius: 3px;
+	padding: 1.5em;
+	word-break: break-all;
+}
+
+.callout {
+	border-radius: 3px;
+	padding: 1rem;
+}
+
+figure {
+	margin: 1.25em 0;
+	page-break-inside: avoid;
+}
+
+figcaption {
+	opacity: 0.5;
+	font-size: 85%;
+	margin-top: 0.5em;
+}
+
+mark {
+	background-color: transparent;
+}
+
+.indented {
+	padding-left: 1.5em;
+}
+
+hr {
+	background: transparent;
+	display: block;
+	width: 100%;
+	height: 1px;
+	visibility: visible;
+	border: none;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.09);
+}
+
+img {
+	max-width: 100%;
+}
+
+@media only print {
+	img {
+		max-height: 100vh;
+		object-fit: contain;
+	}
+}
+
+@page {
+	margin: 1in;
+}
+
+.collection-content {
+	font-size: 0.875rem;
+}
+
+.column-list {
+	display: flex;
+	justify-content: space-between;
+}
+
+.column {
+	padding: 0 1em;
+}
+
+.column:first-child {
+	padding-left: 0;
+}
+
+.column:last-child {
+	padding-right: 0;
+}
+
+.table_of_contents-item {
+	display: block;
+	font-size: 0.875rem;
+	line-height: 1.3;
+	padding: 0.125rem;
+}
+
+.table_of_contents-indent-1 {
+	margin-left: 1.5rem;
+}
+
+.table_of_contents-indent-2 {
+	margin-left: 3rem;
+}
+
+.table_of_contents-indent-3 {
+	margin-left: 4.5rem;
+}
+
+.table_of_contents-link {
+	text-decoration: none;
+	opacity: 0.7;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.18);
+}
+
+table,
+th,
+td {
+	border: 1px solid rgba(55, 53, 47, 0.09);
+	border-collapse: collapse;
+}
+
+table {
+	border-left: none;
+	border-right: none;
+}
+
+th,
+td {
+	font-weight: normal;
+	padding: 0.25em 0.5em;
+	line-height: 1.5;
+	min-height: 1.5em;
+	text-align: left;
+}
+
+th {
+	color: rgba(55, 53, 47, 0.6);
+}
+
+ol,
+ul {
+	margin: 0;
+	margin-block-start: 0.6em;
+	margin-block-end: 0.6em;
+}
+
+li > ol:first-child,
+li > ul:first-child {
+	margin-block-start: 0.6em;
+}
+
+ul > li {
+	list-style: disc;
+}
+
+ul.to-do-list {
+	padding-inline-start: 0;
+}
+
+ul.to-do-list > li {
+	list-style: none;
+}
+
+.to-do-children-checked {
+	text-decoration: line-through;
+	opacity: 0.375;
+}
+
+ul.toggle > li {
+	list-style: none;
+}
+
+ul {
+	padding-inline-start: 1.7em;
+}
+
+ul > li {
+	padding-left: 0.1em;
+}
+
+ol {
+	padding-inline-start: 1.6em;
+}
+
+ol > li {
+	padding-left: 0.2em;
+}
+
+.mono ol {
+	padding-inline-start: 2em;
+}
+
+.mono ol > li {
+	text-indent: -0.4em;
+}
+
+.toggle {
+	padding-inline-start: 0em;
+	list-style-type: none;
+}
+
+/* Indent toggle children */
+.toggle > li > details {
+	padding-left: 1.7em;
+}
+
+.toggle > li > details > summary {
+	margin-left: -1.1em;
+}
+
+.selected-value {
+	display: inline-block;
+	padding: 0 0.5em;
+	background: rgba(206, 205, 202, 0.5);
+	border-radius: 3px;
+	margin-right: 0.5em;
+	margin-top: 0.3em;
+	margin-bottom: 0.3em;
+	white-space: nowrap;
+}
+
+.collection-title {
+	display: inline-block;
+	margin-right: 1em;
+}
+
+.page-description {
+    margin-bottom: 2em;
+}
+
+.simple-table {
+	margin-top: 1em;
+	font-size: 0.875rem;
+	empty-cells: show;
+}
+.simple-table td {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table th {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table-header-color {
+	background: rgb(247, 246, 243);
+	color: black;
+}
+.simple-table-header {
+	font-weight: 500;
+}
+
+time {
+	opacity: 0.5;
+}
+
+.icon {
+	display: inline-block;
+	max-width: 1.2em;
+	max-height: 1.2em;
+	text-decoration: none;
+	vertical-align: text-bottom;
+	margin-right: 0.5em;
+}
+
+img.icon {
+	border-radius: 3px;
+}
+
+.user-icon {
+	width: 1.5em;
+	height: 1.5em;
+	border-radius: 100%;
+	margin-right: 0.5rem;
+}
+
+.user-icon-inner {
+	font-size: 0.8em;
+}
+
+.text-icon {
+	border: 1px solid #000;
+	text-align: center;
+}
+
+.page-cover-image {
+	display: block;
+	object-fit: cover;
+	width: 100%;
+	max-height: 30vh;
+}
+
+.page-header-icon {
+	font-size: 3rem;
+	margin-bottom: 1rem;
+}
+
+.page-header-icon-with-cover {
+	margin-top: -0.72em;
+	margin-left: 0.07em;
+}
+
+.page-header-icon img {
+	border-radius: 3px;
+}
+
+.link-to-page {
+	margin: 1em 0;
+	padding: 0;
+	border: none;
+	font-weight: 500;
+}
+
+p > .user {
+	opacity: 0.5;
+}
+
+td > .user,
+td > time {
+	white-space: nowrap;
+}
+
+input[type="checkbox"] {
+	transform: scale(1.5);
+	margin-right: 0.6em;
+	vertical-align: middle;
+}
+
+p {
+	margin-top: 0.5em;
+	margin-bottom: 0.5em;
+}
+
+.image {
+	border: none;
+	margin: 1.5em 0;
+	padding: 0;
+	border-radius: 0;
+	text-align: center;
+}
+
+.code,
+code {
+	background: rgba(135, 131, 120, 0.15);
+	border-radius: 3px;
+	padding: 0.2em 0.4em;
+	border-radius: 3px;
+	font-size: 85%;
+	tab-size: 2;
+}
+
+code {
+	color: #eb5757;
+}
+
+.code {
+	padding: 1.5em 1em;
+}
+
+.code-wrap {
+	white-space: pre-wrap;
+	word-break: break-all;
+}
+
+.code > code {
+	background: none;
+	padding: 0;
+	font-size: 100%;
+	color: inherit;
+}
+
+blockquote {
+	font-size: 1.25em;
+	margin: 1em 0;
+	padding-left: 1em;
+	border-left: 3px solid rgb(55, 53, 47);
+}
+
+.bookmark {
+	text-decoration: none;
+	max-height: 8em;
+	padding: 0;
+	display: flex;
+	width: 100%;
+	align-items: stretch;
+}
+
+.bookmark-title {
+	font-size: 0.85em;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	height: 1.75em;
+	white-space: nowrap;
+}
+
+.bookmark-text {
+	display: flex;
+	flex-direction: column;
+}
+
+.bookmark-info {
+	flex: 4 1 180px;
+	padding: 12px 14px 14px;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+}
+
+.bookmark-image {
+	width: 33%;
+	flex: 1 1 180px;
+	display: block;
+	position: relative;
+	object-fit: cover;
+	border-radius: 1px;
+}
+
+.bookmark-description {
+	color: rgba(55, 53, 47, 0.6);
+	font-size: 0.75em;
+	overflow: hidden;
+	max-height: 4.5em;
+	word-break: break-word;
+}
+
+.bookmark-href {
+	font-size: 0.75em;
+	margin-top: 0.25em;
+}
+
+.sans { font-family: ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol"; }
+.code { font-family: "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace; }
+.serif { font-family: Lyon-Text, Georgia, ui-serif, serif; }
+.mono { font-family: iawriter-mono, Nitti, Menlo, Courier, monospace; }
+.pdf .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK JP'; }
+.pdf:lang(zh-CN) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK SC'; }
+.pdf:lang(zh-TW) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK TC'; }
+.pdf:lang(ko-KR) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK KR'; }
+.pdf .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.pdf .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK JP'; }
+.pdf:lang(zh-CN) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK SC'; }
+.pdf:lang(zh-TW) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK TC'; }
+.pdf:lang(ko-KR) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK KR'; }
+.pdf .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.highlight-default {
+	color: rgba(55, 53, 47, 1);
+}
+.highlight-gray {
+	color: rgba(120, 119, 116, 1);
+	fill: rgba(120, 119, 116, 1);
+}
+.highlight-brown {
+	color: rgba(159, 107, 83, 1);
+	fill: rgba(159, 107, 83, 1);
+}
+.highlight-orange {
+	color: rgba(217, 115, 13, 1);
+	fill: rgba(217, 115, 13, 1);
+}
+.highlight-yellow {
+	color: rgba(203, 145, 47, 1);
+	fill: rgba(203, 145, 47, 1);
+}
+.highlight-teal {
+	color: rgba(68, 131, 97, 1);
+	fill: rgba(68, 131, 97, 1);
+}
+.highlight-blue {
+	color: rgba(51, 126, 169, 1);
+	fill: rgba(51, 126, 169, 1);
+}
+.highlight-purple {
+	color: rgba(144, 101, 176, 1);
+	fill: rgba(144, 101, 176, 1);
+}
+.highlight-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.highlight-red {
+	color: rgba(212, 76, 71, 1);
+	fill: rgba(212, 76, 71, 1);
+}
+.highlight-gray_background {
+	background: rgba(241, 241, 239, 1);
+}
+.highlight-brown_background {
+	background: rgba(244, 238, 238, 1);
+}
+.highlight-orange_background {
+	background: rgba(251, 236, 221, 1);
+}
+.highlight-yellow_background {
+	background: rgba(251, 243, 219, 1);
+}
+.highlight-teal_background {
+	background: rgba(237, 243, 236, 1);
+}
+.highlight-blue_background {
+	background: rgba(231, 243, 248, 1);
+}
+.highlight-purple_background {
+	background: rgba(244, 240, 247, 0.8);
+}
+.highlight-pink_background {
+	background: rgba(249, 238, 243, 0.8);
+}
+.highlight-red_background {
+	background: rgba(253, 235, 236, 1);
+}
+.block-color-default {
+	color: inherit;
+	fill: inherit;
+}
+.block-color-gray {
+	color: rgba(120, 119, 116, 1);
+	fill: rgba(120, 119, 116, 1);
+}
+.block-color-brown {
+	color: rgba(159, 107, 83, 1);
+	fill: rgba(159, 107, 83, 1);
+}
+.block-color-orange {
+	color: rgba(217, 115, 13, 1);
+	fill: rgba(217, 115, 13, 1);
+}
+.block-color-yellow {
+	color: rgba(203, 145, 47, 1);
+	fill: rgba(203, 145, 47, 1);
+}
+.block-color-teal {
+	color: rgba(68, 131, 97, 1);
+	fill: rgba(68, 131, 97, 1);
+}
+.block-color-blue {
+	color: rgba(51, 126, 169, 1);
+	fill: rgba(51, 126, 169, 1);
+}
+.block-color-purple {
+	color: rgba(144, 101, 176, 1);
+	fill: rgba(144, 101, 176, 1);
+}
+.block-color-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.block-color-red {
+	color: rgba(212, 76, 71, 1);
+	fill: rgba(212, 76, 71, 1);
+}
+.block-color-gray_background {
+	background: rgba(241, 241, 239, 1);
+}
+.block-color-brown_background {
+	background: rgba(244, 238, 238, 1);
+}
+.block-color-orange_background {
+	background: rgba(251, 236, 221, 1);
+}
+.block-color-yellow_background {
+	background: rgba(251, 243, 219, 1);
+}
+.block-color-teal_background {
+	background: rgba(237, 243, 236, 1);
+}
+.block-color-blue_background {
+	background: rgba(231, 243, 248, 1);
+}
+.block-color-purple_background {
+	background: rgba(244, 240, 247, 0.8);
+}
+.block-color-pink_background {
+	background: rgba(249, 238, 243, 0.8);
+}
+.block-color-red_background {
+	background: rgba(253, 235, 236, 1);
+}
+.select-value-color-uiBlue { background-color: rgba(35, 131, 226, .07); }
+.select-value-color-pink { background-color: rgba(245, 224, 233, 1); }
+.select-value-color-purple { background-color: rgba(232, 222, 238, 1); }
+.select-value-color-green { background-color: rgba(219, 237, 219, 1); }
+.select-value-color-gray { background-color: rgba(227, 226, 224, 1); }
+.select-value-color-translucentGray { background-color: rgba(255, 255, 255, 0.0375); }
+.select-value-color-orange { background-color: rgba(250, 222, 201, 1); }
+.select-value-color-brown { background-color: rgba(238, 224, 218, 1); }
+.select-value-color-red { background-color: rgba(255, 226, 221, 1); }
+.select-value-color-yellow { background-color: rgba(253, 236, 200, 1); }
+.select-value-color-blue { background-color: rgba(211, 229, 239, 1); }
+.select-value-color-pageGlass { background-color: undefined; }
+.select-value-color-washGlass { background-color: undefined; }
+
+.checkbox {
+	display: inline-flex;
+	vertical-align: text-bottom;
+	width: 16;
+	height: 16;
+	background-size: 16px;
+	margin-left: 2px;
+	margin-right: 5px;
+}
+
+.checkbox-on {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20width%3D%2216%22%20height%3D%2216%22%20fill%3D%22%2358A9D7%22%2F%3E%0A%3Cpath%20d%3D%22M6.71429%2012.2852L14%204.9995L12.7143%203.71436L6.71429%209.71378L3.28571%206.2831L2%207.57092L6.71429%2012.2852Z%22%20fill%3D%22white%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+
+.checkbox-off {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20x%3D%220.75%22%20y%3D%220.75%22%20width%3D%2214.5%22%20height%3D%2214.5%22%20fill%3D%22white%22%20stroke%3D%22%2336352F%22%20stroke-width%3D%221.5%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+	
+</style></head><body><article id="a805b218-b6e2-48b1-b41d-39ef74343e70" class="page sans"><header><div class="page-header-icon undefined"><span class="icon">🧬</span></div><h1 class="page-title">Biological Molecules</h1><p class="page-description"></p><table class="properties"><tbody></tbody></table></header><div class="page-body"><h1 id="8656835b-47a8-4815-807b-31f4cb371f74" class="">Monomers and polymers</h1><ul id="729d5fac-3a59-4f73-90f2-c3e40a8c19b9" class="bulleted-list"><li style="list-style-type:disc"><strong>Monomers </strong>are the <mark class="highlight-default">smaller units</mark> from which <mark class="highlight-default">larger molecules are made</mark>.</li></ul><ul id="ecfcc100-4d51-4e9d-b356-7a6eb5fed189" class="bulleted-list"><li style="list-style-type:disc"><strong>Polymers</strong> are larger molecules made from a large number of monomers joined together.</li></ul><h3 id="7798ed99-8ef4-4f74-b206-423f16b69922" class="">Examples of monomers and polymers</h3><table id="9c5b3998-4728-444f-aca6-17fc6840c916" class="simple-table"><thead class="simple-table-header"><tr id="c1b982b1-4cfb-4a5c-a3ed-78c069cf60fd"><th id="Ft?k" class="simple-table-header-color simple-table-header" style="width:349px">Monomer</th><th id="XpHh" class="simple-table-header-color simple-table-header" style="width:349px">Polymer</th></tr></thead><tbody><tr id="49e377cc-eb22-4a0e-962d-95e68dcd94d1"><td id="Ft?k" class="" style="width:349px">Amino acid</td><td id="XpHh" class="" style="width:349px">Protein</td></tr><tr id="8a93acbe-03f7-4a12-8463-317f6100efad"><td id="Ft?k" class="" style="width:349px">Glucose</td><td id="XpHh" class="" style="width:349px">Starch, Cellulose and Glycogen</td></tr><tr id="8611bd04-a34a-4041-992b-641c4bbdf47b"><td id="Ft?k" class="" style="width:349px">Nucleotides</td><td id="XpHh" class="" style="width:349px">DNA and RNA</td></tr></tbody></table><h2 id="3fba1783-4712-497c-8d25-5f2876005c89" class="">Hydrolysis and condensation reactions</h2><ul id="da7dcd77-3699-4341-be9c-d20b4ea9739c" class="bulleted-list"><li style="list-style-type:disc"><mark class="highlight-default">A </mark><mark class="highlight-default"><strong>condensation reaction</strong></mark><mark class="highlight-default"> joins two molecules together, forms a
+chemical bond and releases water.</mark></li></ul><ul id="f3b3f372-02d1-4ded-9773-de5f14746937" class="bulleted-list"><li style="list-style-type:disc"><mark class="highlight-default">A </mark><mark class="highlight-default"><strong>hydrolysis reaction</strong></mark><mark class="highlight-default"> breaks a chemical bond between two molecules and uses water.</mark></li></ul><h1 id="f7514ede-8ddc-4f6d-b85e-2e9628cc40b7" class="">Carbohydrates</h1><h2 id="631dafe6-3a0b-482c-9b6e-4d91329124dd" class="">Monosaccharides</h2><p id="e230ad04-446a-4b4c-873d-4f79b0b37b1a" class=""><strong>Monosaccharides </strong>are the monomers from which larger carbohydrates are made. The three common monosaccharides are:</p><ol type="1" id="bd279ad2-d671-4975-b98e-92500accf1d7" class="numbered-list" start="1"><li>Fructose</li></ol><ol type="1" id="e05d24ad-5f82-4b9f-aff3-c43955434d0e" class="numbered-list" start="2"><li>Glucose</li></ol><ol type="1" id="14dc5495-4f3d-4083-bb7e-324b4ff1f352" class="numbered-list" start="3"><li>Galactose</li></ol><p id="cb756c41-dc95-4625-902f-4ca85a367bf5" class=""><strong>Glucose</strong> has two isomers,<strong> α-glucose</strong> and<strong> β-glucose</strong>, with structures:</p><div id="4b02ccf7-b1b3-46f5-bf0a-c23271a20e98" class="column-list"><div id="9b181901-103f-426e-a229-700b168e398f" style="width:50%" class="column"><figure id="923c85ad-b180-4380-ae6b-03d68aaa2ddb" class="image"><a href="Biological%20Molecules%20a805b218b6e248b1b41d39ef74343e70/00055366-DA00046397-DB.png"><img style="width:960px" src="Biological%20Molecules%20a805b218b6e248b1b41d39ef74343e70/00055366-DA00046397-DB.png"/></a></figure></div><div id="534983dc-1c61-48e6-8d30-358bbedc67db" style="width:50%" class="column"><figure id="06c9e884-d7ab-488e-a627-57c3686ca104" class="image"><a href="Biological%20Molecules%20a805b218b6e248b1b41d39ef74343e70/00055366-DA00046396-DB.png"><img style="width:960px" src="Biological%20Molecules%20a805b218b6e248b1b41d39ef74343e70/00055366-DA00046396-DB.png"/></a></figure></div></div><h2 id="3c14d9dc-1ac0-45a7-add2-6ffad5344193" class="">Disaccharides</h2><div id="faf35358-c225-46e2-89a6-7c633b800d9e" class="column-list"><div id="f9841891-30ad-4e13-92a1-8282ca438631" style="width:37.5%" class="column"><p id="91eee694-8a60-4c58-8b34-7958b06c72a3" class="">A condensation reaction between two monosaccharides forms a <strong>glycosidic bond</strong>.</p></div><div id="8b2fa85e-1b4f-4d58-879f-c3a55106ee13" style="width:62.5%" class="column"><figure id="88878e2b-3f88-45f2-884d-636a55090edc" class="image"><a href="Biological%20Molecules%20a805b218b6e248b1b41d39ef74343e70/Untitled.png"><img style="width:1198px" src="Biological%20Molecules%20a805b218b6e248b1b41d39ef74343e70/Untitled.png"/></a></figure></div></div><p id="87f7f183-03ae-4056-be86-d6e188aa6b6a" class=""><strong>Disaccharides </strong>are formed by the condensation of two monosaccharides:</p><table id="01b3e6bf-2362-40ca-96e4-168ae3065d92" class="simple-table"><thead class="simple-table-header"><tr id="bc82d94c-7e44-4177-b88a-17f472b06705"><th id="r&lt;yp" class="simple-table-header-color simple-table-header" style="width:349px">Monosaccharides</th><th id="x\OX" class="simple-table-header-color simple-table-header" style="width:349px">Disaccharide</th></tr></thead><tbody><tr id="b9e3f68b-043f-4247-bdfa-b34121ff40e2"><td id="r&lt;yp" class="" style="width:349px">Fructose and glucose</td><td id="x\OX" class="" style="width:349px">Sucrose (non-reducing)</td></tr><tr id="bbbb5cd8-0d5c-4cc7-ba5d-7c782cbbc4e1"><td id="r&lt;yp" class="" style="width:349px">Glucose and glucose</td><td id="x\OX" class="" style="width:349px">Maltose</td></tr><tr id="8eee0a3a-eff9-43e3-ab6f-52e2029701f3"><td id="r&lt;yp" class="" style="width:349px">Galactose and glucose</td><td id="x\OX" class="" style="width:349px">Lactose</td></tr></tbody></table><h2 id="3eb4b23e-89f7-42f9-8500-0dcb6bc4ce5b" class="">Polysaccharides</h2><p id="cd42c175-21d6-4ec0-997b-be449b79927e" class=""><strong>Polysaccharides </strong>are formed by the condensation of many glucose units:</p><ul id="6f18ccc4-b2fe-4131-8444-126c68777f41" class="bulleted-list"><li style="list-style-type:disc"><strong>Starch </strong>is formed from the condensation of <strong>α-glucose. Amylose </strong>is <strong>unbranched </strong>with <strong>1,4-glycosidic bonds </strong>that coiled up into a<strong> helical </strong>structure. <strong>Amylopectin </strong>is <strong>branched </strong>with <strong>1,4 and 1,6 glycosidic bonds. </strong>The stucture of starch is linked to its funtions in the following ways:<table id="25a7260c-77bd-480a-bfce-8a15bf1e729d" class="simple-table"><thead class="simple-table-header"><tr id="e702c7a9-25b9-4a9a-bb88-1e56530469ad"><th id="nd&gt;g" class="simple-table-header-color simple-table-header" style="width:335px">Property</th><th id="c:jN" class="simple-table-header-color simple-table-header" style="width:335px">How it is related to its funtion</th></tr></thead><tbody><tr id="551fb365-755f-490e-acb0-b4efd21bae7a"><td id="nd&gt;g" class="" style="width:335px"><strong>Insoluble</strong></td><td id="c:jN" class="" style="width:335px"><strong>Does not affect the water potential </strong>of the cell when it is stored</td></tr><tr id="9bd6544f-9c3b-4f2d-9146-2e3a56590d1c"><td id="nd&gt;g" class="" style="width:335px"><strong>Large molecule</strong></td><td id="c:jN" class="" style="width:335px"><strong>Cannot leave</strong> the cell</td></tr><tr id="cb1b8aef-2ed5-490c-b7e5-0176aa59c9d2"><td id="nd&gt;g" class="" style="width:335px"><strong>Amylose</strong> is <strong>helical</strong></td><td id="c:jN" class="" style="width:335px"><strong>Compact</strong> for storage</td></tr><tr id="32d05170-2401-45f9-ba0f-9e3885df62d6"><td id="nd&gt;g" class="" style="width:335px"><strong>Amylopectin</strong> is <strong>highly branched</strong></td><td id="c:jN" class="" style="width:335px">Provides <strong>many ends for enzymes</strong> to<strong> break down rapidly </strong>for respiration to release energy</td></tr></tbody></table></li></ul><ul id="4cbd411c-b8ab-4b6d-99ba-c728764cc941" class="bulleted-list"><li style="list-style-type:disc"><strong>Cellulose </strong>comes in <strong>long </strong>and <strong>straight </strong>chains of <strong>β-glucose </strong>bonded by <strong>1,4-glycosidic bonds</strong>. The<strong> </strong>chains are linked together by many <strong>hydrogen bonds</strong> to form <strong>microfibrils</strong>. This <strong>provides strength to the cell wall.</strong></li></ul><ul id="e7b0b4f3-705a-4ca6-a873-54cc96c57667" class="bulleted-list"><li style="list-style-type:disc"><strong>Glycogen </strong>is formed from the condensation of <strong>α-glucose. </strong>The α-glucose molecules are bonded by<strong> 1,4 and 1,6-glycosidic bonds</strong> so glycogen is <strong>highly branched. </strong>The stucture of glycogen is linked to its funtions in the following ways:<table id="c8705b78-84e5-49af-a9e7-ac80217695bd" class="simple-table"><thead class="simple-table-header"><tr id="c9c4c110-7f01-4da7-abe0-32c0d9a47899"><th id="sJHU" class="simple-table-header-color simple-table-header" style="width:335px">Property</th><th id="w{Nr" class="simple-table-header-color simple-table-header" style="width:335px">How it is related to its function</th></tr></thead><tbody><tr id="e259b420-921d-452a-832d-43da8fc08650"><td id="sJHU" class="" style="width:335px"><strong>Insoluble</strong></td><td id="w{Nr" class="" style="width:335px"><strong>Does not affect the water potential</strong> of the cell when it is stored.</td></tr><tr id="7271fe49-72e7-43bf-bea4-188f07180eeb"><td id="sJHU" class="" style="width:335px"><strong>Large molecule</strong></td><td id="w{Nr" class="" style="width:335px"><strong>Cannot leave</strong> the cell</td></tr><tr id="a7081641-89ff-431c-9825-5138a34cd038"><td id="sJHU" class="" style="width:335px"><strong>Highly branched</strong></td><td id="w{Nr" class="" style="width:335px"><strong>Compact</strong> for storage and provides <strong>many ends for enzymes</strong> to<strong> break down rapidly </strong>for respiration to release energy</td></tr></tbody></table></li></ul><h1 id="f793d4f4-4e85-424d-9027-26ae07845a53" class="">Lipids</h1><p id="8c93cb76-3ff6-4137-a6ae-a925f23ef1e6" class="">Triglycerides and phospholipids are two groups of lipid.</p><h2 id="9b1fb1a2-9d96-4c4f-bbb5-9f3cdef38007" class="">Triglycerides</h2><p id="814ce1f9-e9dd-45f4-8754-4eb0b3831acd" class="">Triglycerides are formed by the condensation of <strong>one molecule of</strong> <strong>glycerol</strong> and <strong>three molecules of fatty acid</strong>.</p><p id="1d5a3b54-e32b-42f2-9b46-ccdedd6d7aa3" class="">A condensation reaction between glycerol and a fatty acid (RCOOH) forms an <strong>ester bond</strong>.</p><figure id="74d2f74a-1700-4393-9946-398cd4be5132" class="image"><a href="Biological%20Molecules%20a805b218b6e248b1b41d39ef74343e70/Untitled%201.png"><img style="width:624px" src="Biological%20Molecules%20a805b218b6e248b1b41d39ef74343e70/Untitled%201.png"/></a></figure><p id="d9fd01ce-5234-48e2-a526-cb5d9ba70e06" class="">
+</p><div id="dbebcbfe-b3bb-48dd-af21-53866618d2a8" class="column-list"><div id="f5af780d-5614-4345-9af5-6727aba9eeb5" style="width:50%" class="column"><p id="10f9aa5b-7d5b-4e5d-90fe-ba5f96306acf" class="">The R-group of a fatty acid may be <strong>saturated</strong> or <strong>unsaturated</strong>.</p><ul id="7815429b-5496-4849-835c-632b4108eb51" class="bulleted-list"><li style="list-style-type:disc">A saturated fatty acid has no double bond between carbon atoms.</li></ul><ul id="abd6adee-5b73-40c1-82eb-4fb23ae7e3e1" class="bulleted-list"><li style="list-style-type:disc">A unsaturated fatty acid has double bonds between carbon atoms</li></ul></div><div id="77d6bd79-e5c0-4b09-8270-f07a9752038f" style="width:50%" class="column"><figure id="2f4ee08b-0f6f-4732-bcae-a28e9372e0bb" class="image"><a href="Biological%20Molecules%20a805b218b6e248b1b41d39ef74343e70/Untitled%202.png"><img style="width:302px" src="Biological%20Molecules%20a805b218b6e248b1b41d39ef74343e70/Untitled%202.png"/></a></figure></div></div><p id="8cf69b33-e015-4803-902f-57f158ba058e" class="">The properties of triglycerides are related to their structures in certain ways:</p><table id="544d88bf-4e54-43e6-b6af-694d95303c13" class="simple-table"><thead class="simple-table-header"><tr id="72649c15-19a3-4a2b-829e-9b4a88e90a89"><th id="mwB_" class="simple-table-header-color simple-table-header" style="width:349px">Property</th><th id="xGGK" class="simple-table-header-color simple-table-header" style="width:349px">How it is related to its funtion</th></tr></thead><tbody><tr id="4046d669-7263-419a-bb76-9de7ad360af8"><td id="mwB_" class="" style="width:349px">A <strong>high ratio of numbers of C-H bonds to C atoms</strong></td><td id="xGGK" class="" style="width:349px">A <strong>large amount of energy</strong> is stored in triglycerides.</td></tr><tr id="25aff7a5-c10c-4590-a3e0-3999231d3738"><td id="mwB_" class="" style="width:349px"><strong>Low mass-energy ratio</strong></td><td id="xGGK" class="" style="width:349px"><strong>A lot of energy is stored within a tiny mass</strong>. It can release twice as much energy per gram caomparing to carbohydrate. This is good for animals that move a lot.</td></tr><tr id="d18621ca-4d78-4004-8911-69c4c30b1028"><td id="mwB_" class="" style="width:349px"><strong>High ratio of H-O atoms</strong></td><td id="xGGK" class="" style="width:349px">Release <strong>metabolic water </strong>when oxidised</td></tr><tr id="7c410440-0bac-4c68-b61e-c23cbf8e0893"><td id="mwB_" class="" style="width:349px"><strong>Insoluble</strong></td><td id="xGGK" class="" style="width:349px"><strong>Does not affect water potential </strong>of the cell in which it is stored</td></tr></tbody></table><h2 id="fd58f8c2-7c61-4dbc-84c0-6b9eed705d0f" class="">Phospholipid</h2><div id="e3f69706-b392-4353-abc1-ed0a1b2e88d2" class="column-list"><div id="45e0b994-1200-41d2-8d3f-c78b1b5d191f" style="width:50%" class="column"><ul id="a9baa29e-f478-49d7-ba77-3478286e1db4" class="bulleted-list"><li style="list-style-type:disc">In <strong>phospholipids</strong>, one of the fatty acids of a triglyceride is substituted by a <strong>phosphate group</strong>.</li></ul><ul id="bb3f22ba-2468-4bf6-9ff0-ad5615879ada" class="bulleted-list"><li style="list-style-type:disc">A phospholipid molecule have a <strong>hydrophilic head</strong> because of its charged phosphate group and two <strong>hydrophobic tails</strong>.</li></ul></div><div id="27ec9838-9f83-42ea-9f8b-2956a89e4de7" style="width:50%" class="column"><figure id="27ed84fc-742f-4496-bb7e-99ebfc70237e" class="image"><a href="Biological%20Molecules%20a805b218b6e248b1b41d39ef74343e70/Untitled%203.png"><img style="width:308px" src="Biological%20Molecules%20a805b218b6e248b1b41d39ef74343e70/Untitled%203.png"/></a></figure></div></div><p id="b4433c06-80cd-4dd1-969a-f6486c78311d" class="">Phospholipids make up the bilayer of cell membranes. In a phospholipid bilayer, <strong>hydrophilic heads point outwards</strong> because they are attracted to the aqueous environment on either side. On the other hand, the <strong>hydrophobic tails point inwards</strong> because they are repelled by the aqueous environment. This acts as a <strong>hydrophobic barrier</strong> which repel water-soluble substances and stop them from passing through.</p><h1 id="6aa33117-a189-4a9a-a9e5-8d5cce1effaf" class="">Proteins and Enzymes</h1><h2 id="5b49ddb2-3943-4ed5-b39f-bf945d0b41a6" class=""><strong><strong>General properties of proteins</strong></strong></h2><div id="53809f39-96c3-4ef9-a696-674cd237c3db" class="column-list"><div id="a6abf3c9-8fca-41cf-acfd-72bbea46742a" style="width:50%" class="column"><p id="54b6466d-6f82-4681-9d9a-09a0e07bf5aa" class=""><strong>Amino acids</strong> are the monomers from which proteins are made. The general structure of an amino acid as:</p><ul id="0b6a38c1-d5be-456c-8fb5-2640fca7a9e1" class="bulleted-list"><li style="list-style-type:disc">NH2 represents an amine group</li></ul><ul id="f46bae5a-e6d5-49a2-b73e-87abb669f713" class="bulleted-list"><li style="list-style-type:disc">COOH represents a carboxyl group</li></ul><ul id="7e014cd4-23ef-4d1c-b55b-23c86f39c3fd" class="bulleted-list"><li style="list-style-type:disc">R represents a side chain</li></ul><p id="a3d18187-e0df-4ba6-9318-9e326680860b" class="">There are 20 naturally occurring amino acids differ only in their side group.</p></div><div id="ab13c3f9-3f8b-4264-ab66-390e4c2c3af2" style="width:50%" class="column"><figure id="91f98a75-1dc1-4f24-a91a-24dca6e2a174" class="image"><a href="Biological%20Molecules%20a805b218b6e248b1b41d39ef74343e70/00055366-DA00046398-DB.png"><img style="width:960px" src="Biological%20Molecules%20a805b218b6e248b1b41d39ef74343e70/00055366-DA00046398-DB.png"/></a></figure><p id="a3781829-8ac1-48b7-b1d3-54ecf49f1cdf" class="">
+</p></div></div><p id="1fdf33b0-dc7e-43cc-97b5-51c547fd8a68" class="">A condensation reaction between two amino acids forms a <strong>peptide bond</strong>.</p><ul id="faf8e593-a419-40cc-8d4e-4e27c089b2f0" class="bulleted-list"><li style="list-style-type:disc"><strong>Dipeptides </strong>are formed by the condensation of <strong>two amino acids</strong>.</li></ul><ul id="8fd789bb-21b5-4005-a5e0-c0e3131fd9b3" class="bulleted-list"><li style="list-style-type:disc"><strong>Polypeptides </strong>are formed by the condensation of <strong>many amino acids</strong>.<figure id="9d8bdaf9-9eb5-4155-9f2a-10e1c5afb23c" class="image"><a href="Biological%20Molecules%20a805b218b6e248b1b41d39ef74343e70/Untitled%204.png"><img style="width:1162px" src="Biological%20Molecules%20a805b218b6e248b1b41d39ef74343e70/Untitled%204.png"/></a></figure></li></ul><h3 id="705767e3-eab0-494d-addb-c11250c659f3" class="">Protein Structures</h3><p id="40d4337e-9772-4d2d-9559-6ccd84205720" class="">There are four levels of protein structures:</p><table id="5c8c1422-e391-44af-9de0-9f1163db597f" class="simple-table"><tbody><tr id="2094e66d-38a0-465b-891c-e8932f1bdc79"><th id="|K:I" class="simple-table-header-color simple-table-header" style="width:349px">Primary structure</th><td id="sjOK" class="" style="width:349px">The <strong>sequence of amino acids </strong>that make up a polypeptide chain</td></tr><tr id="ebd41385-6fea-437c-a6cb-4380e5f50e96"><th id="|K:I" class="simple-table-header-color simple-table-header" style="width:349px">Secondary structure</th><td id="sjOK" class="" style="width:349px">The <strong>folding</strong> up of the polypeptide chain into <strong>α-helix</strong> or <strong>β-pleated sheet</strong> held by <strong>hydrogen bonds</strong>.</td></tr><tr id="93629f45-9709-4e2a-a248-789ac002e9c5"><th id="|K:I" class="simple-table-header-color simple-table-header" style="width:349px">Tertiary structure</th><td id="sjOK" class="" style="width:349px"><strong>Further folding</strong> of the polypeptide chain into an <strong>unique 3D shape</strong> which is held by <strong>hydrogen bonds</strong>, <strong>ionic bonds</strong> and <strong>disulfate bridges</strong>.</td></tr><tr id="9ef979bb-d810-45eb-a025-c20e10ae4822"><th id="|K:I" class="simple-table-header-color simple-table-header" style="width:349px">Quaternary structure</th><td id="sjOK" class="" style="width:349px"><strong>2 or more polypeptide chains</strong> with prosthetic groups such as haemoglobin</td></tr></tbody></table><p id="0a0ef261-5831-4de3-956e-bda7af6185cf" class="">The structures of proteins is determined by the position of amino acids/R group</p><p id="953b2c32-a61e-4608-bc7d-780c8634d34a" class="">For instance, if the primary structure of an enzyme changes, the <strong>interactions </strong>form at different places. Therefore the polypeptide chain will fold up into a different tertiary structure. The shape of the active site will no longer be <strong>complementary </strong>in shape to its substrate. The enzyme is no longer able to form enzyme-substrate complex with its substrate. </p><h2 id="75c6dca0-9234-4108-ae4a-44394322f96e" class=""><strong><strong>Many proteins are enzymes</strong></strong></h2><p id="a977e81f-9026-444a-a6ee-6718f615b9ea" class="">Enzymes are <strong>biological catalysts</strong> that <strong>reduce the activation energies</strong> of many metabolic reactions</p><h3 id="177e92e6-9869-4fb0-ab96-e01908d5b871" class="">Induced-fit Model</h3><p id="45a1525a-87d4-4e47-81f4-7d4ec7dd1e18" class="">The induced-fit model of enzyme action suggests that the <strong>active site</strong> of an enzyme <strong>changes slightly</strong> to be <strong>complementary </strong>in shape with the substrate when it binds to its substrate. This forms enzyme-substrate complex. This <strong>puts stain</strong> onto the substrate therefore <strong>distort</strong> and<strong> break/form</strong> the <strong>bonds. </strong>As a result, the activeation energy of the reaction is lowered.</p><h3 id="cf3f6c51-1434-4ab5-b396-46a2121da277" class="">Factors affecting the activities of enzymes</h3><ol type="1" id="21cdbb4a-d319-41c2-b635-d61ba3dd0c77" class="numbered-list" start="1"><li>Temperature<ul id="27120d55-126c-4919-84ca-d5b9b64dc5f4" class="bulleted-list"><li style="list-style-type:disc">Increase in temperature increases the kinetic energy of enzymes and its substrates so they move faster and collide more frequently to form enzyme-substrate complexes to catalyse the reaction.</li></ul><ul id="34334042-ede6-4488-b4a3-c1b359555f5b" class="bulleted-list"><li style="list-style-type:disc">At high temperature, the hydrogen bonds which hold the tertiary structure of the enzymes are broken. This changes the tertiary structures of the enzyme so the shape of their active sites change. As a result, the active sites of enzymes are no longer complementary to their substrates so enzyme-substrate complexes cannot be formed. </li></ul></li></ol><ol type="1" id="2e39f8b9-c8a9-4ef4-b181-335ce25778e7" class="numbered-list" start="2"><li>pH<ul id="6d7434d5-84d0-48ba-8904-fee81887342d" class="bulleted-list"><li style="list-style-type:disc">All enzymes have an optimum pH value.</li></ul><ul id="e32df7be-f2e8-45a6-9c25-2db9b819e53d" class="bulleted-list"><li style="list-style-type:disc">At extreme pH values, the OH- and H+ ions change the charge of the amino acids at the active site. As a result, the hydrogen and ionic bonds holding the shape of the active site break and the tertiary structure of the enzyme changes. The active site is no longer complementary in shape to its enzymes so it cannot form enzyme-substrate complexes.</li></ul></li></ol><ol type="1" id="a3a4eac9-5f88-47d1-a46e-b7b241e6514d" class="numbered-list" start="3"><li>Substrate Concentration<ul id="d9079296-d17c-4f87-827e-4b1f4a1fd5eb" class="bulleted-list"><li style="list-style-type:disc">More substrates mean there is an increased chance of enzyme and substrate colliding and form enzyme-substrate complexes. As a result, the rate of reaction increases.</li></ul><ul id="8aca6786-8533-4992-916d-53d7f483e674" class="bulleted-list"><li style="list-style-type:disc">After a certain point, the rate of activity will cease to rise regardless of any further increases in substrate levels. This is because all active sites of enzymes are occupied and saturated.</li></ul></li></ol><ol type="1" id="1e106043-0ce4-43ec-89f9-cbe2cf2b9082" class="numbered-list" start="4"><li>Enzyme Concentration<ul id="6fb30c20-80f4-4b2d-be56-85b356691bdf" class="bulleted-list"><li style="list-style-type:disc">More enzymes mean there is an increased chance of enzyme and substrate colliding and form enzyme-substrate complexes. As a result, the rate of reaction increases.</li></ul><ul id="018ca4fb-548c-4294-8b78-52db4fbd567b" class="bulleted-list"><li style="list-style-type:disc">After a certain point, the rate of activity will cease to rise regardless of any further increases in enzyme levels. This is because there is not enough substrates and substrate is the limiting factor.</li></ul></li></ol><ol type="1" id="52444b5c-f2f4-4a21-8129-424e1aa58674" class="numbered-list" start="5"><li>Competitive Inhibition<ul id="c233a3a7-4533-40e7-9205-f2cabdb9b26d" class="bulleted-list"><li style="list-style-type:disc">The competitive inhibitor is structurally and chemically similar to the substrate.</li></ul><ul id="085fbcf0-9975-471b-ae63-447d9c04ccb4" class="bulleted-list"><li style="list-style-type:disc">The inhibitor binds to and blocks the active site of the enzyme thus prevents the formation of enzyme-substrate complex.</li></ul><ul id="695a1b2c-9233-4659-91f5-a03f1c57431e" class="bulleted-list"><li style="list-style-type:disc">As the inhibitor is in competition with the substrate, its effects can be reduced by increasing substrate concentration</li></ul></li></ol><ol type="1" id="1b0bfe4a-8e65-4328-bbdf-9c5623ab4b23" class="numbered-list" start="6"><li>Noncompetitive Inhibition<ul id="2784e38b-9876-4368-94e2-85f39aab88dc" class="bulleted-list"><li style="list-style-type:disc">Non-competitive inhibition involves a molecule binding to an allosteric site(a site away from the active site)</li></ul><ul id="21b5583b-b3ea-4748-bdd4-139df87362ba" class="bulleted-list"><li style="list-style-type:disc">The binding of the inhibitor to the allosteric site causes a conformational change to the enzyme’s active site and the tertiary structure of the enzyme</li></ul><ul id="480dab90-c65c-40ba-8b1e-2b1e21ec23ec" class="bulleted-list"><li style="list-style-type:disc">As a result, the active site is no longer complementary to its enzyme so enzyme-substrate complex cannot be formed.</li></ul><ul id="b1ce8b6e-7307-4165-9074-0c2a8ed4bb01" class="bulleted-list"><li style="list-style-type:disc">As the inhibitor is not in direct competition with the substrate, increasing substrate levels cannot mitigate the inhibitor’s effect</li></ul></li></ol><h1 id="cc192650-b5a0-49df-9882-c8bf093f57fa" class="">Nucleic Acids</h1><p id="4ec620e0-0ee1-4248-af68-5228a8eafa34" class="">Deoxyribonucleic acid (DNA) and ribonucleic acid (RNA) are important information-carrying molecules. In all living cells, DNA holds genetic information and RNA transfers genetic information from DNA to the ribosomes.</p><p id="52493635-ebc2-4eda-a027-0251c72218cd" class="">Ribosomes are formed from RNA and proteins.</p><h2 id="6de823f5-85c0-47bd-9ebd-dc9557a374b9" class="">Structure of DNA and RNA</h2><div id="c525f196-5551-485b-a84c-a1288d25def6" class="column-list"><div id="f46f1938-a473-45d6-a0fd-43ce10b24de1" style="width:50%" class="column"><p id="3caa9a91-b7d9-4f1c-bd72-7a49cf083d63" class="">Both DNA and RNA are polymers of nucleotides. Each nucleotide is formed from a pentose, a nitrogen-containing organic base and a phosphate group:</p></div><div id="7bca4b65-d423-48dc-8b30-3478a7cfa3bd" style="width:50%" class="column"><figure id="b3288311-6d25-469b-92f2-b354c6235c7a" class="image"><a href="Biological%20Molecules%20a805b218b6e248b1b41d39ef74343e70/00055366-DA00045783-DB.png"><img style="width:960px" src="Biological%20Molecules%20a805b218b6e248b1b41d39ef74343e70/00055366-DA00045783-DB.png"/></a></figure></div></div><ul id="aba22de8-d00a-4c1d-8c95-71a8c89110a6" class="bulleted-list"><li style="list-style-type:disc">The components of a DNA nucleotide are deoxyribose, a phosphate group and one of the organic bases adenine, cytosine, guanine or thymine.</li></ul><ul id="ffaeddd0-fda0-480d-b7dd-6e8c48063930" class="bulleted-list"><li style="list-style-type:disc">The components of an RNA nucleotide are ribose, a phosphate group and one of the organic bases adenine, cytosine, guanine or uracil.</li></ul><ul id="9aed7719-0a0b-4df1-90b2-085680db2d21" class="bulleted-list"><li style="list-style-type:disc">A condensation reaction between two nucleotides forms a phosphodiester bond.</li></ul><p id="2c416667-5fad-4323-867c-0605f08a1fda" class="">A DNA molecule is a double helix with two polynucleotide chains held together by <strong>hydrogen bonds</strong> between specific complementary base pairs.</p><p id="a6d3af66-989d-436e-862d-cd1efcba11e8" class="">An RNA molecule is a relatively short polynucleotide chain.</p><h3 id="6b855f90-7840-4c65-a152-ec903af3aaa8" class="">DNA vs RNA</h3><table id="40d68935-04ad-4935-ade7-884ec5046ecb" class="simple-table"><thead class="simple-table-header"><tr id="98863fe0-24e0-4b55-9fa5-b3e02af3d061"><th id="iKK@" class="simple-table-header-color simple-table-header" style="width:349px">DNA</th><th id="a:tr" class="simple-table-header-color simple-table-header" style="width:349px">RNA</th></tr></thead><tbody><tr id="ed6e6f36-5ade-4445-aa08-5f005890629f"><td id="iKK@" class="" style="width:349px"><strong>Long</strong></td><td id="a:tr" class="" style="width:349px"><strong>Short</strong></td></tr><tr id="418cc42e-0366-4397-928e-48badee7b30a"><td id="iKK@" class="" style="width:349px">Has <strong>deoxyribose </strong>as sugar</td><td id="a:tr" class="" style="width:349px">Has <strong>ribose </strong>as sugar</td></tr><tr id="60bf770f-b7cf-467c-b55d-330fb29521d3"><td id="iKK@" class="" style="width:349px">Four bases are guanine, cytosine, adenine and <strong>thymine</strong></td><td id="a:tr" class="" style="width:349px">Four bases are guanine, cytosine, adenine and <strong>uracil</strong></td></tr><tr id="eddf5ce2-6ade-40ec-b105-1758db8d29e6"><td id="iKK@" class="" style="width:349px"><strong>Double-stranded</strong></td><td id="a:tr" class="" style="width:349px"><strong>Single-stranded</strong></td></tr></tbody></table><h3 id="549983ce-51c4-4abb-9a94-6659dd63383a" class="">How is DNA adapted to its functions:</h3><table id="a01d8f3c-d69f-4be5-9166-7532040ab350" class="simple-table"><tbody><tr id="3feeb856-46cc-4c61-a234-bf262fa746d2"><th id="|I&lt;g" class="simple-table-header-color simple-table-header" style="width:349px">Sugar-phosphate backbone</th><td id="IPDc" class="" style="width:349px"><strong>Protect </strong>reactive bases and hydrogen bonds</td></tr><tr id="f58e1b8c-fd62-4577-9111-3303ad1c3a59"><th id="|I&lt;g" class="simple-table-header-color simple-table-header" style="width:349px">Large molecule</th><td id="IPDc" class="" style="width:349px">Store a lot of information</td></tr><tr id="2bcecc46-860e-4b24-a2b1-a0c83f08bd99"><th id="|I&lt;g" class="simple-table-header-color simple-table-header" style="width:349px">Double stranded</th><td id="IPDc" class="" style="width:349px">Each strand can be used as a <strong>template</strong></td></tr><tr id="f7ae274d-ad25-4922-bce0-ee6106f03f63"><th id="|I&lt;g" class="simple-table-header-color simple-table-header" style="width:349px">Complemenrary base pairing</th><td id="IPDc" class="" style="width:349px">Allows <strong>accurate replication</strong></td></tr><tr id="e3bab82d-cd40-43dd-9f81-7a1a870d2efe"><th id="|I&lt;g" class="simple-table-header-color simple-table-header" style="width:349px">Helical</th><td id="IPDc" class="" style="width:349px">Compact</td></tr><tr id="3b79b332-48ac-49c2-bdbe-4856fc42c266"><th id="|I&lt;g" class="simple-table-header-color simple-table-header" style="width:349px">Weak hydrogen bonds</th><td id="IPDc" class="" style="width:349px">Break easily in replication</td></tr><tr id="d962ed67-73a2-4889-8bf5-d1fdad7926d0"><th id="|I&lt;g" class="simple-table-header-color simple-table-header" style="width:349px">Many hydrogen bonds</th><td id="IPDc" class="" style="width:349px">Stable</td></tr><tr id="a792f77a-7628-4aa0-9927-a3cecd0c7410"><th id="|I&lt;g" class="simple-table-header-color simple-table-header" style="width:349px">Base sequence</th><td id="IPDc" class="" style="width:349px">allows information to be stored</td></tr></tbody></table><h2 id="112e555b-3e7d-45fc-b482-113f89c8df89" class=""><strong><strong>DNA replication</strong></strong></h2><p id="e6799c0b-d9e1-4066-94c3-a875de6593c9" class="">The semi-conservative replication of DNA ensures genetic continuity between generations of cells.</p><p id="cb6060ac-3af0-4506-bf37-881c6c20e825" class="">The process of semi-conservative replication of DNA in terms of :</p><ol type="1" id="1333f75b-e145-4957-afe4-92b590ffb448" class="numbered-list" start="1"><li><strong>DNA helicase</strong> breaks the<strong> hydrogen bonds</strong> between the bases and <strong>unwinds the double helix.</strong></li></ol><ol type="1" id="2941d161-5a52-49c0-870f-01585813b69a" class="numbered-list" start="2"><li>Each of the seperated parental DNA strands acts as a <strong>template. </strong>Free<strong> </strong>DNA nucleotides are attracted and pair up accourding to <strong>complementary base pairing.</strong></li></ol><ol type="1" id="eb7a326b-41aa-497c-b2c8-593716a29af4" class="numbered-list" start="3"><li>DNA polymerase join the nucleotides together in a condensation reaction forming <strong>phosphodiester bonds</strong>. Hydrogen bonds form between two strands of DNA.</li></ol><ol type="1" id="b61a1621-3f01-44f4-8f20-f6d985a150b8" class="numbered-list" start="4"><li>The process is described as semi-conservative as one strand is original and the other strand is new.</li></ol><h2 id="256cd6b6-5d5d-4189-b02d-7ffd94d69564" class="">ATP</h2><p id="44963c06-1c1b-404d-b9ff-c39d53830d9a" class="">A single molecule of adenosine triphosphate (ATP) is a nucleotide derivative and is formed from a molecule of ribose, a molecule of adenine and three phosphate groups.</p><figure id="ada88b7f-fc31-4db7-b305-d2b1bf7ab343" class="image"><a href="https://static.aqa.org.uk/assets/image/0020/235442/00055366-DA00045784-DB.png"><img src="https://static.aqa.org.uk/assets/image/0020/235442/00055366-DA00045784-DB.png"/></a></figure><p id="bb518cf5-b6df-460b-839f-07dc3636b415" class="">Hydrolysis of ATP to adenosine diphosphate (ADP) and an inorganic phosphate group (Pi) is catalysed by the enzyme ATP hydrolase.</p><ul id="38a2de22-284c-433d-9182-8ca6526bb486" class="bulleted-list"><li style="list-style-type:disc">The hydrolysis of ATP can be coupled to energy-requiring reactions within cells.</li></ul><ul id="41020158-ba70-400a-a064-bec3f71f9910" class="bulleted-list"><li style="list-style-type:disc">The inorganic phosphate released during the hydrolysis of ATP can be used to phosphorylate other compounds, often making them more reactive.</li></ul><p id="861de414-d6fa-4c65-9141-d9cfd1e1fbb1" class="">ATP is resynthesised by the condensation of ADP and Pi. This reaction is catalysed by the enzyme ATP synthase during photosynthesis, or during respiration.</p><h3 id="0ea4edff-5aaa-4cb1-ab53-ac1905269c5b" class="">ATP vs Glucose as Energy Source</h3><table id="f16f06f8-66d0-4fd9-99ca-3bab3a1aca32" class="simple-table"><thead class="simple-table-header"><tr id="4f68cfa3-ea52-4af3-8ee8-39b1f929bce7"><th id="oX~o" class="simple-table-header-color simple-table-header" style="width:349px">Glucose</th><th id="FktL" class="simple-table-header-color simple-table-header" style="width:349px">ATP</th></tr></thead><tbody><tr id="84f15a3b-553f-4e97-a79f-ec9b2b1ec0ef"><td id="oX~o" class="" style="width:349px">Release large amount of energy</td><td id="FktL" class="" style="width:349px">Releae <strong>small</strong> and <strong>managable </strong>amount of energy</td></tr><tr id="26e117c9-29e8-45ec-801d-74917d9d8154"><td id="oX~o" class="" style="width:349px">Large</td><td id="FktL" class="" style="width:349px"><strong>Small</strong> and <strong>soluble </strong>so easy for transport</td></tr><tr id="94863fab-7fd8-4c9d-badc-c2ec924c7274"><td id="oX~o" class="" style="width:349px">Can leave the cell</td><td id="FktL" class="" style="width:349px"><strong>Do not leave the cell</strong></td></tr><tr id="1494d618-4a3a-41f6-9d23-a661a09c1f8a"><td id="oX~o" class="" style="width:349px">Cannot be resynthesised</td><td id="FktL" class="" style="width:349px">Can be <strong>rapidly resynthesised</strong></td></tr><tr id="16e9c9c4-faeb-4ee9-8592-543297b4b807"><td id="oX~o" class="" style="width:349px">Takes long time</td><td id="FktL" class="" style="width:349px">Release energy <strong>instantaneously</strong></td></tr><tr id="b25c053c-9b18-4011-9e61-9a2c5eedddec"><td id="oX~o" class="" style="width:349px">Cannot <strong>phosphorylate </strong>other molecules to make them reac</td><td id="FktL" class="" style="width:349px">Can <strong>phosphorylate </strong>other molecules to make them more reactive</td></tr><tr id="a6b7c79b-8b1b-4a98-9118-aece6044ed23"><td id="oX~o" class="" style="width:349px">Many steps</td><td id="FktL" class="" style="width:349px">Single reaction</td></tr></tbody></table><h3 id="2c184b4e-dfb5-4322-bd4a-28b778e4f371" class="">Functions of ATP</h3><ol type="1" id="0622c01a-502b-4e4c-81f3-22cfff9cbddf" class="numbered-list" start="1"><li>Building <strong>macromolecules</strong></li></ol><ol type="1" id="12127871-bf55-47e8-931e-14064b61fbdf" class="numbered-list" start="2"><li>Activate other molecules to make reactive by <strong>phosphorylation</strong></li></ol><ol type="1" id="504c7f8c-3f86-48b8-a6c9-7d9f9affb139" class="numbered-list" start="3"><li>Active transport</li></ol><ol type="1" id="30a26c80-1bbe-4179-a209-21a79b9fe07f" class="numbered-list" start="4"><li>Muscle contraction</li></ol><ol type="1" id="b30fe9bd-1752-400c-b8c4-81779cbdc405" class="numbered-list" start="5"><li>Secretion of substances by <strong>exocytosis</strong></li></ol><h1 id="620e4d8e-f64a-4627-aa7b-b6ea566a89d8" class="">Water</h1><p id="fb1c6650-21b2-4d54-8a26-d78f2f509a62" class="">Water is a major component of cells. It has several properties that are important in biology. In particular, water:</p><table id="a49abb14-cf80-42d4-8a1a-4337bff85ddb" class="simple-table"><tbody><tr id="172de500-9dd0-46bb-803e-57ac989d966b"><th id="PgFG" class="simple-table-header-color simple-table-header" style="width:349px">Metabolite</th><td id="=J~o" class="" style="width:349px">Takes part in many chemical reactions. It is a raw material of <strong>photosynthesis</strong> and involved in <strong>hydrolysis</strong>.</td></tr><tr id="bfcc8513-82b8-4b34-ba28-df95bbb9ca55"><th id="PgFG" class="simple-table-header-color simple-table-header" style="width:349px">Important solvent</th><td id="=J~o" class="" style="width:349px">Place for <strong>metabolic reactions</strong> and <strong>transportation</strong> of substances</td></tr><tr id="6109f607-5417-4946-8bde-69b6226f1000"><th id="PgFG" class="simple-table-header-color simple-table-header" style="width:349px">High specific heat capacity</th><td id="=J~o" class="" style="width:349px">Requires a lot of energy to raise 1 gram by 1 degree. This <strong>buffers</strong> sudden temperature change.</td></tr><tr id="730ac338-81b9-4b25-925d-903e49edc15d"><th id="PgFG" class="simple-table-header-color simple-table-header" style="width:349px">High specific latent heat</th><td id="=J~o" class="" style="width:349px">Requires a lot of energy to turn 1 gram of water into gas. This helps to<strong> cool </strong>organisms down</td></tr><tr id="8c772c8b-37d9-438b-a9ec-9ac13610c620"><th id="PgFG" class="simple-table-header-color simple-table-header" style="width:349px">Strongly cohesive</th><td id="=J~o" class="" style="width:349px">Water mllecules are ‘stickly’ due to hydrogen bonds. This allows water to be pulled up in the <strong>xyleum </strong>and it also provides <strong>surface tension</strong> for small insects to stand on.</td></tr></tbody></table><h1 id="8042122d-ae07-4048-a3d7-a566ec74193f" class="">Inorganic Ions</h1><p id="ccccc28a-c6ba-4278-8b95-4a25557a951c" class="">Inorganic ions occur in solution in the cytoplasm and body fluids of organisms, some in high concentrations and others in very low concentrations.</p><p id="b3ea1ae1-090b-491b-8bf3-d1564e04475e" class="">Each type of ion has a specific role, depending on its properties.</p><table id="d3fc59f8-931c-439d-b2e3-a3a161f63413" class="simple-table"><tbody><tr id="c79bb755-640e-49c0-946c-fe5bbcf1b0b0"><th id="peDt" class="simple-table-header-color simple-table-header" style="width:349px">Iron</th><td id="yJ`E" class="" style="width:349px">Carrying oxygen in <strong>haemoglobin</strong>.</td></tr><tr id="d9b0dd51-c03c-4db6-bf83-80e23dda30d8"><th id="peDt" class="simple-table-header-color simple-table-header" style="width:349px">Phosphate</th><td id="yJ`E" class="" style="width:349px">Component of <strong>DNA</strong> and <strong>RNA</strong>.</td></tr><tr id="d92e4e0b-09c3-4d71-935c-d1bd3a9c8c22"><th id="peDt" class="simple-table-header-color simple-table-header" style="width:349px">Hydrogen</th><td id="yJ`E" class="" style="width:349px">Regulate <strong>pH</strong> and <strong>chemeosmosis</strong> of ATP synthase.</td></tr><tr id="d5c4cac0-ad80-4616-9836-82a454fd424a"><th id="peDt" class="simple-table-header-color simple-table-header" style="width:349px">Sodium</th><td id="yJ`E" class="" style="width:349px"><strong>Co-transport</strong> of glucose and amino acids and <strong>action potential</strong>.</td></tr></tbody></table><p id="706b96da-3378-4acc-b657-90f6ed157ee5" class="">
+</p></div></article><span class="sans" style="font-size:14px;padding-top:2em"></span></body></html>
